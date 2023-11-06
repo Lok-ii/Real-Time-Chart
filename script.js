@@ -24,7 +24,6 @@ let chart = new Chart(myChart, {
     options: {
         scales: {
             x: {
-                // beginAtZero: true,
                 type: 'linear',
                 position: 'bottom',
                 title: {
@@ -68,8 +67,8 @@ let addData = async () => {
         // chart.data.datasets[0].data.push(data.values[0].high);
         // chart.update();
 
+        chart.data.datasets[0].data.push(Math.random() * 100);
         chart.data.labels.push(data.labels.length);
-        chart.data.datasets[0].data.push(Math.floor(Math.random() * 100));
         chart.update();
 }
 setInterval(addData, 1000);
